@@ -19,7 +19,7 @@ def pretty_output(title: str):
             table = PrettyTable(title=title, encoding="utf-8", align="l", header=False)
             table.set_style(SINGLE_BORDER)
             table.add_rows([
-                (f"Result: {result}",),
+                (f"Answer: {result}",),
                 (f"Time: {elapsed_time:.6f} seconds",)
             ])
             print(table)
