@@ -1,3 +1,5 @@
+from enum import Enum
+from pathlib import Path
 from functools import wraps
 from time import perf_counter
 from typing import TypeVar, ParamSpec, Callable
@@ -6,6 +8,22 @@ from prettytable import PrettyTable, SINGLE_BORDER
 
 T = TypeVar("T")
 P = ParamSpec("P")
+
+
+def get_input_as_lines(
+    input_path: Path,
+    encoding: str = "utf-8",
+) -> list[str]:
+    with open(input_path, "r", encoding=encoding) as f:
+        return f.readlines()
+
+
+def get_input_as_content(
+    input_path: Path,
+    encoding: str = "utf-8",
+) -> str:
+    with open(input_path, "r", encoding=encoding) as f:
+        return f.read()
 
 
 def pretty_output(title: str):

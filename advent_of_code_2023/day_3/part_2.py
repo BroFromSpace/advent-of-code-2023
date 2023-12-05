@@ -1,10 +1,11 @@
+from pathlib import Path
 from collections import defaultdict
 
-from advent_of_code_2023.decorators import pretty_output
+from advent_of_code_2023.utils import get_input_as_lines, pretty_output
 
 
 @pretty_output(title="Day 3: Gear Ratios - Part 2")
-def get_gear_ratio_sum(lines: list[str]) -> int:
+def solution(lines: list[str]) -> int:
     schema_height = len(lines) - 1
     schema_length = len(lines[0]) - 1
 
@@ -37,8 +38,7 @@ def get_gear_ratio_sum(lines: list[str]) -> int:
 
 
 def main() -> None:
-    with open("./input.txt", "r", encoding="utf-8") as f:
-        get_gear_ratio_sum(f.readlines())
+    solution(get_input_as_lines(Path('./input.txt')))
 
 
 if __name__ == "__main__":

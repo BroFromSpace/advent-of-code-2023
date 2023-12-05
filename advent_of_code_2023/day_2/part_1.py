@@ -1,4 +1,6 @@
-from advent_of_code_2023.decorators import pretty_output
+from pathlib import Path
+
+from advent_of_code_2023.utils import get_input_as_lines, pretty_output
 
 MAX_CUBES_PER_COLOR = {
     "red": 12,
@@ -10,7 +12,7 @@ CHUNK_END_CHARS = {":", ";", ",", "\n"}
 
 
 @pretty_output(title="Day 2: Cube Conundrum - Part 1")
-def get_game_ids_sum(lines: list[str]) -> int:
+def solution(lines: list[str]) -> int:
     game_ids_sum = 0
 
     for line in lines:
@@ -38,8 +40,7 @@ def get_game_ids_sum(lines: list[str]) -> int:
 
 
 def main() -> None:
-    with open("./input.txt", "r", encoding="utf-8") as f:
-        get_game_ids_sum(f.readlines())
+    solution(get_input_as_lines(Path('./input.txt')))
 
 
 if __name__ == "__main__":

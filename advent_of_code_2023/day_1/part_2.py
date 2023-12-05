@@ -1,4 +1,6 @@
-from advent_of_code_2023.decorators import pretty_output
+from pathlib import Path
+
+from advent_of_code_2023.utils import get_input_as_lines, pretty_output
 
 LETTERS_TO_DIGITS = {
     "one": 1,
@@ -14,7 +16,7 @@ LETTERS_TO_DIGITS = {
 
 
 @pretty_output(title="Day 1: Trebuchet?! - Part 2")
-def get_calibration_sum(lines: list[str]) -> int:
+def solution(lines: list[str]) -> int:
     calibration_sum = 0
 
     for line in lines:
@@ -47,8 +49,7 @@ def get_calibration_sum(lines: list[str]) -> int:
 
 
 def main() -> None:
-    with open("./input.txt", "r", encoding="utf-8") as f:
-        get_calibration_sum(f.readlines())
+    solution(get_input_as_lines(Path('./input.txt')))
 
 
 if __name__ == "__main__":

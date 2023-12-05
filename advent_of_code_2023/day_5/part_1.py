@@ -1,4 +1,6 @@
-from advent_of_code_2023.decorators import pretty_output
+from pathlib import Path
+
+from advent_of_code_2023.utils import get_input_as_content, pretty_output
 
 
 @pretty_output(title="title")
@@ -23,10 +25,8 @@ def solution(lines: str) -> int:
     return min(seeds)
 
 
-
 def main() -> None:
-    with open("./input.txt", "r", encoding="utf-8") as f:
-        solution(f.read())
+    solution(get_input_as_content(Path('./input.txt')))
 
 
 if __name__ == "__main__":

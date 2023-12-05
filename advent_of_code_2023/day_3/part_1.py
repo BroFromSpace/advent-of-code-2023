@@ -1,10 +1,12 @@
-from advent_of_code_2023.decorators import pretty_output
+from pathlib import Path
+
+from advent_of_code_2023.utils import get_input_as_lines, pretty_output
 
 SYMBOLS = {"/", "+", "#", "$", "-", "&", "%", "=", "@", "*"}
 
 
 @pretty_output(title="Day 3: Gear Ratios - Part 1")
-def get_part_numbers_sum(lines: list[str]):
+def solution(lines: list[str]):
     schema_height = len(lines) - 1
     schema_length = len(lines[0]) - 1
 
@@ -35,8 +37,7 @@ def get_part_numbers_sum(lines: list[str]):
 
 
 def main() -> None:
-    with open("./input.txt", "r", encoding="utf-8") as f:
-        get_part_numbers_sum(f.readlines())
+    solution(get_input_as_lines(Path('./input.txt')))
 
 
 if __name__ == "__main__":

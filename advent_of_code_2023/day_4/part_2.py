@@ -1,10 +1,11 @@
+from pathlib import Path
 from collections import defaultdict
 
-from advent_of_code_2023.decorators import pretty_output
+from advent_of_code_2023.utils import get_input_as_lines, pretty_output
 
 
 @pretty_output(title="Day 4: Scratchcards - Part 2")
-def get_total_points(lines: list[str]) -> int:
+def solution(lines: list[str]) -> int:
     total_points = 0
     scratchcard_points = defaultdict(int)
 
@@ -23,8 +24,7 @@ def get_total_points(lines: list[str]) -> int:
 
 
 def main() -> None:
-    with open("./input.txt", "r", encoding="utf-8") as f:
-        get_total_points(f.readlines())
+    solution(get_input_as_lines(Path('./input.txt')))
 
 
 if __name__ == "__main__":

@@ -1,10 +1,12 @@
-from advent_of_code_2023.decorators import pretty_output
+from pathlib import Path
+
+from advent_of_code_2023.utils import get_input_as_lines, pretty_output
 
 CHUNK_END_CHARS = {":", ";", ",", "\n"}
 
 
 @pretty_output(title="Day 2: Cube Conundrum - Part 2")
-def get_cubes_power_sum(lines: list[str]) -> int:
+def solution(lines: list[str]) -> int:
     cubes_power_sum = 0
 
     for line in lines:
@@ -35,8 +37,7 @@ def get_cubes_power_sum(lines: list[str]) -> int:
 
 
 def main() -> None:
-    with open("./input.txt", "r", encoding="utf-8") as f:
-        get_cubes_power_sum(f.readlines())
+    solution(get_input_as_lines(Path('./input.txt')))
 
 
 if __name__ == "__main__":
