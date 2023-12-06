@@ -21,6 +21,7 @@ def solution(lines: list[str]) -> int:
                 points_per_card *= 2
 
         total_points += points_per_card
+        
     return total_points
 
 

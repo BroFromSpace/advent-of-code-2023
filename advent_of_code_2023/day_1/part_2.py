@@ -45,6 +45,7 @@ def solution(lines: list[str]) -> int:
                     continue
 
         calibration_sum += int(f"{first_number}{last_number}") if first_number and last_number else 0
+        
     return calibration_sum
 
 

@@ -33,6 +33,7 @@ def solution(lines: list[str]) -> int:
                 number_chunk += char
 
         cubes_power_sum += max_rgb["red"] * max_rgb["blue"] * max_rgb["green"]
+        
     return cubes_power_sum
 
 

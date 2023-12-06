@@ -33,6 +33,7 @@ def solution(lines: list[str]):
                         part_numbers_sum += int(number_chunk)
 
                     number_chunk = ""
+
     return part_numbers_sum
 
 

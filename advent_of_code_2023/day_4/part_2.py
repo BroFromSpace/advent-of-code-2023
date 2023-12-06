@@ -20,6 +20,7 @@ def solution(lines: list[str]) -> int:
             scratchcard_points[i + j + 1] += scratchcard_points[i]
 
         total_points += scratchcard_points[i]
+        
     return total_points
 
 

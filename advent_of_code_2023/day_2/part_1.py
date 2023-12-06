@@ -36,6 +36,7 @@ def solution(lines: list[str]) -> int:
                 number_chunk += char
 
         game_ids_sum += game_id
+        
     return game_ids_sum
 
 

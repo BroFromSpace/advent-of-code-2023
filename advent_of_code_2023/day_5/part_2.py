@@ -33,6 +33,7 @@ def solution(lines: str) -> int:
             else:
                 new.append((start_range, end_range))
         seeds = new
+
     return min(seeds)[0]
 
 
