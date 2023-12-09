@@ -14,12 +14,12 @@ def extrapolate(sequence: list[int]) -> int:
 
 @pretty_output(title="Day 9: Mirage Maintenance", caption="part - 2")
 def solution(lines: list[str]) -> int:
-	totals = 0
+	total = 0
 
 	for line in lines:
-		totals += extrapolate(list(map(int, line.split())))
+		total += extrapolate(list(map(int, line.split())))
 
-	return totals
+	return total
 
 
 def main() -> None:
