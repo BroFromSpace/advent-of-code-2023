@@ -5,9 +5,9 @@ from advent_of_code_2023.utils import get_input_as_content, pretty_output
 
 @pretty_output(title="Day 5: If You Give A Seed A Fertilizer", caption="part - 1")
 def solution(lines: str) -> int:
-	seeds, *blocks = lines.split("\n\n")
+	seeds_str, *blocks = lines.split("\n\n")
 
-	seeds = list(map(int, seeds.split(":")[1].split()))
+	seeds = list(map(int, seeds_str.split(":")[1].split()))
 
 	for block in blocks:
 		ranges = [list(map(int, line.split())) for line in block.splitlines()[1:]]

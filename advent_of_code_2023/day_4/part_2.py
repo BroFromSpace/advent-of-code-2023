@@ -1,5 +1,6 @@
 from collections import defaultdict
 from pathlib import Path
+from typing import DefaultDict
 
 from advent_of_code_2023.utils import get_input_as_lines, pretty_output
 
@@ -7,7 +8,7 @@ from advent_of_code_2023.utils import get_input_as_lines, pretty_output
 @pretty_output(title="Day 4: Scratchcards - Part 2", caption="part - 2")
 def solution(lines: list[str]) -> int:
 	total_points = 0
-	scratchcard_points = defaultdict(int)
+	scratchcard_points: DefaultDict[int, int] = defaultdict(int)
 
 	for i, line in enumerate(lines):
 		scratchcard_points[i] += 1

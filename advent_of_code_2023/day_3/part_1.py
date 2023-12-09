@@ -6,7 +6,7 @@ SYMBOLS = {"/", "+", "#", "$", "-", "&", "%", "=", "@", "*"}
 
 
 @pretty_output(title="Day 3: Gear Ratios - Part 1", caption="part - 1")
-def solution(lines: list[str]):
+def solution(lines: list[str]) -> int:
 	schema_height = len(lines) - 1
 	schema_length = len(lines[0]) - 1
 

@@ -3,9 +3,10 @@ from pathlib import Path
 from time import perf_counter
 from typing import Callable, ParamSpec, TypeVar
 
-from advent_of_code_2023.console import console
 from rich.box import ROUNDED
 from rich.table import Table
+
+from advent_of_code_2023.console import console
 
 T = TypeVar("T")
 P = ParamSpec("P")
@@ -21,7 +22,9 @@ def get_input_as_content(input_path: Path, encoding: str = "utf-8") -> str:
 		return f.read()
 
 
-def pretty_output(title: str, caption: str):
+def pretty_output(
+	title: str, caption: str
+) -> Callable[[Callable[P, T]], Callable[P, T]]:
 	def decorator(func: Callable[P, T]) -> Callable[P, T]:
 		@wraps(func)
 		def wrapper(*args: P.args, **kwargs: P.kwargs) -> T:

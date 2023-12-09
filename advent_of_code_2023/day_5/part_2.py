@@ -5,8 +5,8 @@ from advent_of_code_2023.utils import get_input_as_content, pretty_output
 
 @pretty_output(title="Day 5: If You Give A Seed A Fertilizer", caption="part - 2")
 def solution(lines: str) -> int:
-	inputs, *blocks = lines.split("\n\n")
-	inputs = list(map(int, inputs.split(":")[1].split()))
+	inputs_str, *blocks = lines.split("\n\n")
+	inputs = list(map(int, inputs_str.split(":")[1].split()))
 
 	seeds = []
 

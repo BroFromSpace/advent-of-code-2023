@@ -8,10 +8,10 @@ from advent_of_code_2023.utils import get_input_as_content, pretty_output
 @pretty_output(title="Day 6: Wait For It", caption="part - 1")
 def solution(lines: str) -> int:
 	totals = 1
-	times, distances = lines.splitlines()
+	times_str, distances_str = lines.splitlines()
 
-	times = map(int, re.findall(r"\d+", times))
-	distances = map(int, re.findall(r"\d+", distances))
+	times = map(int, re.findall(r"\d+", times_str))
+	distances = map(int, re.findall(r"\d+", distances_str))
 
 	for t, d in zip(times, distances):
 		# (t - x) * x = d
