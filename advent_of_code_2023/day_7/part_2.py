@@ -41,10 +41,12 @@ def classify(hand: str) -> int:
 
 # Optimized method using math(~100x faster)
 def opt_classify(hand: str) -> int:
-	if hand == "JJJJJ":
+	counts = [hand.count(card) for card in hand if card != "J"]
+
+	# Case when hand is full of Jokers - "JJJJJ"
+	if not counts:
 		return 6
 
-	counts = [0, *[hand.count(card) for card in hand if card != "J"]]
 	num_jokers = hand.count("J")
 
 	curr_max = max(counts)
